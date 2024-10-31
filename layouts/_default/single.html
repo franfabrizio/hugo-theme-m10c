@@ -25,6 +25,9 @@
       </div>
       {{- end }}
     </header>
+    {{ if and (.Params.toc) (gt .WordCount .Site.Params.tocMinWordCount ) }}
+      {{ .TableOfContents }}
+    {{ end }}
     <div class="post-content">
       {{ .Content }}
     </div>
